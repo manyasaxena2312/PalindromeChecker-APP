@@ -2,26 +2,38 @@ public class PalindromeApp {
     static void main() {
      import java.util.Scanner;
 
-        public class UseCase3PalindromeCheckerApp {
+        public class UseCase4PalindromeCheckerApp {
+
             public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
 
-                System.out.print("Enter a string: ");
-                String original = scanner.nextLine();
+                Scanner sc = new Scanner(System.in);
 
-                String reversed = "";
+                System.out.print("Input text: ");
+                String text = sc.nextLine().trim().toLowerCase();
 
-                for (int i = original.length() - 1; i >= 0; i--) {
-                    reversed = reversed + original.charAt(i);
+                char[] characters = text.toCharArray();
+
+                int start = 0;
+                int end = characters.length - 1;
+
+                boolean isPalindrome = true;
+
+                while (start < end) {
+
+                    if (characters[start] != characters[end]) {
+                        isPalindrome = false;
+                        break;
+                    }
+
+                    start++;
+                    end--;
                 }
 
-                if (original.equals(reversed)) {
-                    System.out.println("The given string is a palindrome.");
+                if (isPalindrome) {
+                    System.out.println("Decision: It is a Palindrome.");
                 } else {
-                    System.out.println("The given string is not a palindrome.");
+                    System.out.println("Decision: It is NOT a Palindrome.");
                 }
-
-                scanner.close();
             }
         }
 
