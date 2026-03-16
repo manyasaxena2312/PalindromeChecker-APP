@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class UseCase8PalindromeApp {
+public class PalindromeApp {
 
     static class Node {
         char data;
